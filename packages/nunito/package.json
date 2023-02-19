@@ -4,7 +4,13 @@
   "version": "1.0.1",
   "license": "MIT",
   "description": "Nunito font injector to electron aplications.",
-  "keywords": [],
+  "keywords": [
+    "electron",
+    "css",
+    "inject",
+    "font",
+    "nunito"
+  ],
   "main": "index.js",
   "typings": "index.d.ts",
   "publishConfig": {
