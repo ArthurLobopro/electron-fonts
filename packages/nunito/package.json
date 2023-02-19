@@ -1,0 +1,12 @@
+{
+  "name": "@electron-fonts/nunito",
+  "author": "Arthur Lobo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Nunito font injector to electron aplications.",
+  "keywords": [],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}
