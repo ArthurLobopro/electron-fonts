@@ -6,6 +6,7 @@
   "description": "Nunito font injector to electron aplications.",
   "keywords": [],
   "main": "index.js",
+  "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
