@@ -1,22 +1,22 @@
 {
-        "name": "@electron-fonts/open-sans",
-        "author": "Arthur Lobo",
-        "version": "1.0.0",
-        "license": "MIT",
-        "description": "open-sans font injector to electron aplications.",
-        "keywords": [
-          "electron",
-          "css",
-          "inject",
-          "font",
-          "Open Sans"
-        ],
-        "main": "index.js",
-        "typings": "index.d.ts",
-        "publishConfig": {
-          "access": "public"
-        },
-        "dependencies": {
-          "electron-css-injector": "^1.0.0"
-        }
-      }
+    "name": "@electron-fonts/open-sans",
+    "author": "Arthur Lobo",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Open Sans font injector to electron aplications.",
+    "keywords": [
+        "electron",
+        "css",
+        "inject",
+        "font",
+        "Open Sans"
+    ],
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "electron-css-injector": "^1.0.0"
+    }
+}
