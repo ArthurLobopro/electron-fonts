@@ -125,7 +125,7 @@ if (!packageName) {
 function inputPackageName() {
     console.log("Package name: ")
     process.stdin.once("data", data => {
-        const refinedData = data.toString().toLowerCase().replace(/ /g, "-").replace(/\\n/g, "")
+        const refinedData = data.toString().trim().toLowerCase().replace(/ /g, "-").replace(/\\n/g, "")
 
         if (refinedData.length) {
             main(refinedData)
