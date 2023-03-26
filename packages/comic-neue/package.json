@@ -1,0 +1,22 @@
+{
+    "name": "@electron-fonts/comic-neue",
+    "author": "Arthur Lobo",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Comic Neue font injector to electron aplications.",
+    "keywords": [
+        "electron",
+        "css",
+        "inject",
+        "font",
+        "Comic Neue"
+    ],
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "electron-css-injector": "^1.0.0"
+    }
+}
