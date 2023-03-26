@@ -109,14 +109,30 @@ function generatePackageJson(packageName, packageDir) {
 }
 
 function getArg(argName) {
-    return process.argv.find(arg => arg.startsWith(argName)).split("=")[1] || null
+    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
+    return (arg && arg.split("=")[1]) || null
 }
 
 const packageName = getArg("--name")
 
+
 if (!packageName) {
-    console.error("Please provide a package name")
-    process.exit(1)
+    inputPackageName()
+} else {
+    main(packageName)
 }
 
-main(packageName)
+function inputPackageName() {
+    console.log("Package name: ")
+    process.stdin.once("data", data => {
+        const refinedData = data.toString().toLowerCase().replace(/ /g, "-").replace(/\\n/g, "")
+
+        if (refinedData.length) {
+            main(refinedData)
+            process.exit(0)
+        } else {
+            console.error("Package name is required")
+            inputPackageName()
+        }
+    })
+}
