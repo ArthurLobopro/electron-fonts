@@ -1,6 +1,11 @@
 const fs = require("fs")
 const path = require("path")
 
+/**
+ * @param {string} message
+ * @param {string} end
+ * @returns {Promise<string>}
+ */
 function input(message = "", end = "\n") {
     process.stdout.write(message)
     process.stdout.write(end)
@@ -13,7 +18,7 @@ function input(message = "", end = "\n") {
 }
 
 async function getPackagePath() {
-    const packageName = await input("Package name: ")
+    const packageName = (await input("Package name: ")).toLowerCase()
 
     if (!packageName) {
         console.log("Package name is required.")
@@ -79,6 +84,7 @@ async function main() {
     fs.writeFileSync(path.resolve(css_dir, "index.css"), css_content)
 
     console.log("Done.")
+    console.log(`See: ${path.resolve(css_dir, "index.css")}`)
     process.exit(0)
 }
 
