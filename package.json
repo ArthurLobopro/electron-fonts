@@ -6,6 +6,7 @@
   "author": "Arthur Lobo <64273139+ArthurLobopro@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "generate": "node ./scripts/create/index.js"
+    "generate": "node ./scripts/create/index.js",
+    "update-css": "node ./scripts/update-css/index.js"
   }
 }
