@@ -80,7 +80,7 @@ async function main() {
 
         await download(fontUrl, savePath, { extract: true })
 
-        console.log(`Downloaded "${fontName}" to "${savePath}"`)
+        console.log(`Downloaded "${fontName}" to "${savePath}\n"`)
 
         const fontDir = fs.readdirSync(savePath)
 
@@ -91,7 +91,7 @@ async function main() {
             fontDir.filter(file => file.endsWith(".ttf"))
                 .map(file => path.resolve(savePath, file))
 
-        console.log(`Found ${files.length} font files`)
+        console.log(`Found ${files.length} font files\n`)
 
         process.stdout.write("Creating package dir...")
 
@@ -100,11 +100,11 @@ async function main() {
             { cwd: process.cwd() }
         )
 
-        console.log("    Done.")
+        console.log("    Done.\n")
 
         const fontDirPath = path.resolve(packageDir, "fonts")
 
-        console.log("Copying font files...")
+        process.stdout.write("Copying font files...")
 
         files.forEach(file => {
             fs.copyFileSync(
@@ -113,7 +113,7 @@ async function main() {
             )
         })
 
-        console.log("    Done.")
+        console.log("    Done.\n")
 
         process.stdout.write("Updating CSS...")
 
@@ -122,7 +122,7 @@ async function main() {
             { cwd: process.cwd() }
         )
 
-        console.log("    Done.")
+        console.log("    Done.\n")
 
         process.stdout.write("Creating commit...")
 
@@ -133,7 +133,7 @@ async function main() {
             { cwd: process.cwd() }
         )
 
-        console.log("    Done.")
+        console.log("    Done.\n")
 
         console.log("Publishing package...")
 
