@@ -17,35 +17,34 @@ function input(message = "", end = "\n") {
     })
 }
 
-async function getPackageName() {
-    const packageName =
-        (await input("Package name: "))
-            .replace(/( \w)/g, match => "-" + match[1])
-            .toLowerCase()
+async function getFontName() {
+    const fontName = await input("Font name: ")
+
+    const packageName = fontName
+        .replace(/( \w)/g, match => "-" + match[1])
+        .toLowerCase()
 
     if (!packageName) {
         console.log("Package name is required.")
-        return getPackageName()
+        return getFontName()
     }
 
     const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
 
     if (!fs.existsSync(packagePath)) {
         console.log("Package not found.")
-        return getPackageName()
+        return getFontName()
     }
 
-    return packageName
+    return fontName
 }
 
-async function main(packageName) {
+async function main(fontName) {
+    const packageName = fontName
+        .replace(/( \w)/g, match => "-" + match[1])
+        .toLowerCase()
+
     const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
-
-    const packageJsonPath = path.resolve(packagePath, "package.json")
-
-    const fontName = packageName
-        .replace(/^[a-z]/g, match => match.toUpperCase())
-        .replace(/-[a-z]/g, match => " " + match[1].toUpperCase())
 
     const font_dir = path.resolve(packagePath, "fonts")
 
@@ -118,7 +117,7 @@ function getFontWeigth(fontName) {
 
 (
     async () => {
-        const packageName = await getPackageName()
+        const packageName = await getFontName()
         main(packageName)
     }
 )()

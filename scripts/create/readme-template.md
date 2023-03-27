@@ -13,9 +13,9 @@ These packages may not work in `BrowserWindow` instances that loaded online webp
 * On your `preload.js`, add:
 
 ```ts
-import {{package-name-pascal-case}} from "@electron-fonts/{{package-name}}"
+import {{font-name-without-spaces}} from "@electron-fonts/{{package-name}}"
 
 window.addEventListener("DOMContentLoaded", () => {
-    {{package-name-pascal-case}}.inject()
+    {{font-name-without-spaces}}.inject()
 })
 ```

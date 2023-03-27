@@ -4,15 +4,13 @@ const fs = require("fs")
 const path = require("path")
 
 /**
- * @param {string} packageName 
+ * @param {string} fontName
  * @param {string} packageDir 
  */
-function generatePackageJson(packageName, packageDir) {
+function generatePackageJson(fontName, packageDir) {
     const packageJsonPath = path.resolve(packageDir, "package.json")
 
-    const fontName = packageName
-        .replace(/^[a-z]/g, match => match.toUpperCase())
-        .replace(/-[a-z]/g, match => " " + match[1].toUpperCase())
+    const packageName = fontName.toLowerCase().replace(/ /g, "-")
 
     const packageJsonContent = {
         "name": `@electron-fonts/${packageName}`,

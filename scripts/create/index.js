@@ -8,7 +8,9 @@ const { generateIndexJs } = require("./generators/index.js")
 const { generatePackageJson } = require("./generators/package.js")
 const { generateReadme } = require("./generators/readme.js")
 
-function main(packageName) {
+function main(fontName) {
+    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+
     const packageDir = path.resolve(__dirname, "../../packages", packageName)
 
     if (fs.existsSync(packageDir)) {
@@ -18,8 +20,8 @@ function main(packageName) {
 
     fs.mkdirSync(packageDir)
 
-    generateReadme(packageName, packageDir)
-    generatePackageJson(packageName, packageDir)
+    generateReadme(fontName, packageDir)
+    generatePackageJson(fontName, packageDir)
     generateIndexJs(packageDir)
     generateTypings(packageName, packageDir)
     generateFolders(packageDir)
@@ -41,10 +43,19 @@ if (!packageName) {
 function inputPackageName() {
     console.log("Package name: ")
     process.stdin.once("data", data => {
-        const refinedData = data.toString().trim().toLowerCase().replace(/ /g, "-").replace(/\\n/g, "")
+        const packageName = data.toString().trim()
 
-        if (refinedData.length) {
-            main(refinedData)
+        const package_dir_name = packageName.toLowerCase().replace(/ /g, "-")
+
+        if (package_dir_name.length) {
+            const alreadyExists = fs.existsSync(path.resolve(__dirname, "../../packages", package_dir_name))
+
+            if (alreadyExists) {
+                console.error(`Package ${package_dir_name} already exists`)
+                return process.exit(1)
+            }
+
+            main(packageName)
             process.exit(0)
         } else {
             console.error("Package name is required")
