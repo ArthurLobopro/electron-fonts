@@ -58,8 +58,6 @@ async function getFontName() {
 
     const fontName = await input("Font name: ")
 
-    console.log(fontName)
-
     if (!validateFontName(fontName)) {
         console.log("Invalid font name.")
         return getFontName()
@@ -95,16 +93,19 @@ async function main() {
 
         console.log(`Found ${files.length} font files`)
 
-        console.log("Creating package dir...")
+        process.stdout.write("Creating package dir...")
 
         execSync(
             `yarn generate --name="${fontName}"`,
             { cwd: process.cwd() }
         )
 
+        console.log("    Done.")
+
         const fontDirPath = path.resolve(packageDir, "fonts")
 
         console.log("Copying font files...")
+
         files.forEach(file => {
             fs.copyFileSync(
                 file,
@@ -112,14 +113,18 @@ async function main() {
             )
         })
 
-        console.log("Updating CSS...")
+        console.log("    Done.")
+
+        process.stdout.write("Updating CSS...")
 
         execSync(
             `yarn update-css --name="${fontName}"`,
             { cwd: process.cwd() }
         )
 
-        console.log("Creating commit...")
+        console.log("    Done.")
+
+        process.stdout.write("Creating commit...")
 
         const relativePath = path.relative(process.cwd(), packageDir)
 
@@ -128,7 +133,18 @@ async function main() {
             { cwd: process.cwd() }
         )
 
-        console.log("Done!")
+        console.log("    Done.")
+
+        console.log("Publishing package...")
+
+        execSync(
+            "npm publish",
+            {
+                cwd: packageDir,
+                stdio: "inherit"
+            }
+        )
+
         process.exit(0)
 
     } catch (error) {
