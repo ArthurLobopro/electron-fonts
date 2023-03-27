@@ -17,29 +17,28 @@ function input(message = "", end = "\n") {
     })
 }
 
-async function getPackagePath() {
+async function getPackageName() {
     const packageName = (await input("Package name: ")).toLowerCase()
 
     if (!packageName) {
         console.log("Package name is required.")
-        return getPackagePath()
+        return getPackageName()
     }
 
     const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
 
     if (!fs.existsSync(packagePath)) {
         console.log("Package not found.")
-        return getPackagePath()
+        return getPackageName()
     }
 
     return packagePath
 }
 
-async function main() {
-    const packagePath = await getPackagePath()
-    const packageJsonPath = path.resolve(packagePath, "package.json")
+async function main(packageName) {
+    const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
 
-    const packageName = String(require(packageJsonPath).name).split("/").pop()
+    const packageJsonPath = path.resolve(packagePath, "package.json")
 
     const fontName = packageName
         .replace(/^[a-z]/g, match => match.toUpperCase())
@@ -113,4 +112,29 @@ function getFontWeigth(fontName) {
                                         400
 }
 
-main()
+function getArg(argName) {
+    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
+    return (arg && arg.split("=")[1]) || null
+}
+
+(
+    async () => {
+
+        const packageName = getArg("--name")
+
+        if (!packageName) {
+            const packageName = await getPackageName()
+            main(packageName)
+        } else {
+            const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
+
+            if (!fs.existsSync(packagePath)) {
+                console.log("Package not found.")
+                return
+            }
+
+            main(packageName)
+        }
+
+    }
+)()
