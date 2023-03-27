@@ -13,7 +13,7 @@ function main(packageName) {
 
     generateReadme(packageName, packageDir)
     generatePackageJson(packageName, packageDir)
-    geerateIndexJs(packageDir)
+    generateIndexJs(packageDir)
     generateTypings(packageName, packageDir)
     generateFolders(packageDir)
 }
@@ -31,18 +31,20 @@ function generateFolders(packageDir) {
     fs.writeFileSync(path.resolve(packageDir, "css", "index.css"), "")
 }
 
-function geerateIndexJs(packageDir) {
+function generateIndexJs(packageDir) {
     const indexJsPath = path.resolve(packageDir, "index.js")
 
-    const indexJsContent = `const path = require("path")
-    const { injectCSS } = require("electron-css-injector")
-    
-    const cssPath = path.resolve(__dirname, "./css/index.css")
-    
-    module.exports = Object.freeze({
-        path: cssPath,
-        inject: () => injectCSS(cssPath),
-    })`
+    const indexJsContent = [
+        `const path = require("path")`,
+        `const { injectCSS } = require("electron-css-injector")`,
+        ``,
+        `const cssPath = path.resolve(__dirname, "./css/index.css")`,
+        ``,
+        `module.exports = Object.freeze({`,
+        `    path: cssPath,`,
+        `    inject: () => injectCSS(cssPath),`,
+        `})`
+    ].join("\n")
 
     fs.writeFileSync(indexJsPath, indexJsContent)
 }
@@ -50,11 +52,12 @@ function geerateIndexJs(packageDir) {
 function generateTypings(packageName, packageDir) {
     const typing_path = path.resolve(packageDir, "index.d.ts")
 
-    const typing_content = `
-    declare module "@electron-fonts/${packageName}" {
-        export const path: string
-        export function inject(): void
-    }`
+    const typing_content = [
+        `declare module "@electron-fonts/${packageName}" {`,
+        `    export const path: string`,
+        `    export function inject(): void`,
+        `}`
+    ].join("\n")
 
     fs.writeFileSync(typing_path, typing_content)
 }
