@@ -32,7 +32,7 @@ async function getPackageName() {
         return getPackageName()
     }
 
-    return packagePath
+    return packageName
 }
 
 async function main(packageName) {
