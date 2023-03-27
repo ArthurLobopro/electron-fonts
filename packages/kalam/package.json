@@ -1,7 +1,7 @@
 {
     "name": "@electron-fonts/kalam",
     "author": "Arthur Lobo",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "description": "Kalam font injector to electron aplications.",
     "keywords": [
