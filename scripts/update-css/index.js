@@ -18,7 +18,10 @@ function input(message = "", end = "\n") {
 }
 
 async function getPackageName() {
-    const packageName = (await input("Package name: ")).toLowerCase()
+    const packageName =
+        (await input("Package name: "))
+            .replace(/( \w)/g, match => "-" + match[1])
+            .toLowerCase()
 
     if (!packageName) {
         console.log("Package name is required.")
@@ -112,29 +115,10 @@ function getFontWeigth(fontName) {
                                         400
 }
 
-function getArg(argName) {
-    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
-    return (arg && arg.split("=")[1]) || null
-}
 
 (
     async () => {
-
-        const packageName = getArg("--name")
-
-        if (!packageName) {
-            const packageName = await getPackageName()
-            main(packageName)
-        } else {
-            const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
-
-            if (!fs.existsSync(packagePath)) {
-                console.log("Package not found.")
-                return
-            }
-
-            main(packageName)
-        }
-
+        const packageName = await getPackageName()
+        main(packageName)
     }
 )()
