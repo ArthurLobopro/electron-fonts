@@ -1,7 +1,7 @@
 {
     "name": "@electron-fonts/bungee",
     "author": "Arthur Lobo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "description": "Bungee font injector to electron aplications.",
     "keywords": [
