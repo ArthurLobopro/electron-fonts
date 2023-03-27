@@ -17,28 +17,6 @@ function input(message = "", end = "\n") {
     })
 }
 
-async function getFontName() {
-    const fontName = await input("Font name: ")
-
-    const packageName = fontName
-        .replace(/( \w)/g, match => "-" + match[1])
-        .toLowerCase()
-
-    if (!packageName) {
-        console.log("Package name is required.")
-        return getFontName()
-    }
-
-    const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
-
-    if (!fs.existsSync(packagePath)) {
-        console.log("Package not found.")
-        return getFontName()
-    }
-
-    return fontName
-}
-
 async function main(fontName) {
     const packageName = fontName
         .replace(/( \w)/g, match => "-" + match[1])
@@ -112,6 +90,54 @@ function getFontWeigth(fontName) {
                                 name.includes("extrabold") ? 800 :
                                     name.includes("black") ? 900 :
                                         400
+}
+
+function getArg(argName) {
+    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
+    return (arg && arg.split("=")[1]) || null
+}
+
+let argAlreadyVerified = false
+
+async function getFontName() {
+
+    if (!argAlreadyVerified) {
+        const fontName = getArg("--name")
+
+        argAlreadyVerified = true
+
+        if (fontName !== null) {
+            if (validateFontName(fontName)) {
+                return fontName
+            } else {
+                return getFontName()
+            }
+        }
+    }
+
+    const fontName = await input("Font name: ")
+
+    console.log(fontName)
+
+    if (!validateFontName(fontName)) {
+        console.log("Invalid font name.")
+        return getFontName()
+    }
+
+    return fontName
+}
+
+function validateFontName(fontName) {
+    const packageName = String(fontName).toLowerCase().replace(/ /g, "-")
+
+    const packageDir = path.resolve(__dirname, "../../packages", packageName)
+
+    if (!fs.existsSync(packageDir)) {
+        console.error(`Package ${packageName} not found`)
+        return false
+    }
+
+    return true
 }
 
 

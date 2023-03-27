@@ -32,34 +32,67 @@ function getArg(argName) {
     return (arg && arg.split("=")[1]) || null
 }
 
-const packageName = getArg("--name")
+let argAlreadyVerified = false
 
-if (!packageName) {
-    inputPackageName()
-} else {
-    main(packageName)
+async function getFontName() {
+
+    if (!argAlreadyVerified) {
+        const fontName = getArg("--name")
+
+        argAlreadyVerified = true
+
+        if (fontName !== null) {
+            if (validateFontName(fontName)) {
+                return fontName
+            } else {
+                return getFontName()
+            }
+        }
+    }
+
+    const fontName = await input("Font name: ")
+
+    console.log(fontName)
+
+    if (!validateFontName(fontName)) {
+        console.log("Invalid font name.")
+        return getFontName()
+    }
+
+    return fontName
 }
 
-function inputPackageName() {
-    console.log("Package name: ")
-    process.stdin.once("data", data => {
-        const packageName = data.toString().trim()
+function validateFontName(fontName) {
+    const packageName = String(fontName).toLowerCase().replace(/ /g, "-")
 
-        const package_dir_name = packageName.toLowerCase().replace(/ /g, "-")
+    const packageDir = path.resolve(__dirname, "../../packages", packageName)
 
-        if (package_dir_name.length) {
-            const alreadyExists = fs.existsSync(path.resolve(__dirname, "../../packages", package_dir_name))
+    if (fs.existsSync(packageDir)) {
+        console.error(`Package ${packageName} already exists`)
+        return false
+    }
 
-            if (alreadyExists) {
-                console.error(`Package ${package_dir_name} already exists`)
-                return process.exit(1)
-            }
+    return true
+}
 
-            main(packageName)
-            process.exit(0)
-        } else {
-            console.error("Package name is required")
-            inputPackageName()
-        }
+/**
+ * @param {string} message
+ * @param {string} end
+ * @returns {Promise<string>}
+ */
+function input(message = "", end = "\n") {
+    process.stdout.write(message)
+    process.stdout.write(end)
+
+    return new Promise(res => {
+        process.stdin.once("data", data => {
+            res(data.toString().trim())
+        })
     })
 }
+
+(async () => {
+    const fontName = await getFontName()
+
+    main(fontName)
+})()
