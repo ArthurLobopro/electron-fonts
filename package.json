@@ -2,11 +2,20 @@
   "name": "electron-fonts",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/ArthurLobopro/electron-fonts.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurLobopro/electron-fonts.git"
+  },
   "author": "Arthur Lobo <64273139+ArthurLobopro@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "generate": "node ./scripts/create/index.js",
     "update-css": "node ./scripts/update-css/index.js"
-  }
+  },
+  "description": "Electron fonts packages provide font archives em electron desktop apps.",
+  "bugs": {
+    "url": "https://github.com/ArthurLobopro/electron-fonts/issues"
+  },
+  "homepage": "https://github.com/ArthurLobopro/electron-fonts#readme",
+  "keywords": []
 }
