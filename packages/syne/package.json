@@ -1,0 +1,22 @@
+{
+    "name": "@electron-fonts/syne",
+    "author": "Arthur Lobo",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Syne font injector to electron aplications.",
+    "keywords": [
+        "electron",
+        "css",
+        "inject",
+        "font",
+        "Syne"
+    ],
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "electron-css-injector": "^1.0.0"
+    }
+}
