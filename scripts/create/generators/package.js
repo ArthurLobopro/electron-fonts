@@ -34,7 +34,15 @@ function generatePackageJson(packageName, packageDir) {
         },
         "dependencies": {
             "electron-css-injector": "^1.0.0"
-        }
+        },
+        "repository": {
+            "type": "git",
+            "url": "git+https://github.com/ArthurLobopro/electron-fonts.git"
+        },
+        "bugs": {
+            "url": "https://github.com/ArthurLobopro/electron-fonts/issues"
+        },
+        "homepage": "https://github.com/ArthurLobopro/electron-fonts#readme"
     }
 
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJsonContent, null, 4))
