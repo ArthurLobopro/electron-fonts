@@ -23,10 +23,8 @@ axios.get(
         }
     }
 ).then(res => {
-    console.log(res)
-
     const fontNames = res.data.items
-        .filter(font => font.category == "handwriting")
+        .filter(font => font.category == "serif")
         .map(font => {
             return (font.family)
         })
@@ -41,7 +39,7 @@ axios.get(
                 stdio: "ignore"
             }
         )
-        console.log("    Done.")
+        console.log("  Done.")
     })
 
     process.exit(0)
