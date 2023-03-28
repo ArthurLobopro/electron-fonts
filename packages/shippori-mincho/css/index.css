@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Shippori Mincho";
+    src: url(../fonts/ShipporiMincho-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Shippori Mincho";
+    src: url(../fonts/ShipporiMincho-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Shippori Mincho";
+    src: url(../fonts/ShipporiMincho-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Shippori Mincho";
+    src: url(../fonts/ShipporiMincho-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Shippori Mincho";
+    src: url(../fonts/ShipporiMincho-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
