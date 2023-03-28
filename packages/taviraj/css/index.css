@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-ThinItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-ExtraLightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-LightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-ExtraBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Taviraj";
+    src: url(../fonts/Taviraj-BlackItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 900;
+}
