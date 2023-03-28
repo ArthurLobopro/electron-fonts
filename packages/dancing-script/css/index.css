@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Dancing Script";
+    src: url(../fonts/DancingScript-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    src: url(../fonts/DancingScript-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    src: url(../fonts/DancingScript-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    src: url(../fonts/DancingScript-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}

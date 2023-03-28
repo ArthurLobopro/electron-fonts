@@ -26,6 +26,7 @@ axios.get(
     console.log(res)
 
     const fontNames = res.data.items
+        .filter(font => font.category == "handwriting")
         .map(font => {
             return (font.family)
         })
@@ -36,7 +37,8 @@ axios.get(
         execSync(
             `node scripts/add-package/index.js --name="${font}"`,
             {
-                cwd: process.cwd()
+                cwd: process.cwd(),
+                stdio: "ignore"
             }
         )
         console.log("    Done.")

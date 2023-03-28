@@ -1,0 +1,30 @@
+{
+    "name": "@electron-fonts/dr-sugiyama",
+    "author": "Arthur Lobo",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Dr Sugiyama font injector to electron aplications.",
+    "keywords": [
+        "electron",
+        "css",
+        "inject",
+        "font",
+        "Dr Sugiyama"
+    ],
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "electron-css-injector": "^1.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ArthurLobopro/electron-fonts.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ArthurLobopro/electron-fonts/issues"
+    },
+    "homepage": "https://github.com/ArthurLobopro/electron-fonts#readme"
+}

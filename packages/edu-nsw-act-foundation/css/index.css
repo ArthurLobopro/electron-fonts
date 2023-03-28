@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Edu NSW ACT Foundation";
+    src: url(../fonts/EduNSWACTFoundation-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Edu NSW ACT Foundation";
+    src: url(../fonts/EduNSWACTFoundation-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Edu NSW ACT Foundation";
+    src: url(../fonts/EduNSWACTFoundation-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Edu NSW ACT Foundation";
+    src: url(../fonts/EduNSWACTFoundation-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
