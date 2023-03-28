@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Stoke";
+    src: url(../fonts/Stoke-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Stoke";
+    src: url(../fonts/Stoke-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
