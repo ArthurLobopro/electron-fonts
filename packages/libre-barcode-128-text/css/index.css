@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Libre Barcode 128 Text";
+    src: url(../fonts/LibreBarcode128Text-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
