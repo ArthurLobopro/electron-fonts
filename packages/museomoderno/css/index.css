@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-ThinItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-ExtraLightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-LightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-ExtraBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(../fonts/MuseoModerno-BlackItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 900;
+}
