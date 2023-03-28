@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url(../fonts/MPLUSRounded1c-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}

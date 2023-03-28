@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Noto Sans Kayah Li";
+    src: url(../fonts/NotoSansKayahLi-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans Kayah Li";
+    src: url(../fonts/NotoSansKayahLi-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto Sans Kayah Li";
+    src: url(../fonts/NotoSansKayahLi-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Noto Sans Kayah Li";
+    src: url(../fonts/NotoSansKayahLi-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}

@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Archivo Narrow";
+    src: url(../fonts/ArchivoNarrow-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

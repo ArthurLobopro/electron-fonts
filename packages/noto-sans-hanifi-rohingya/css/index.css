@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Noto Sans Hanifi Rohingya";
+    src: url(../fonts/NotoSansHanifiRohingya-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans Hanifi Rohingya";
+    src: url(../fonts/NotoSansHanifiRohingya-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto Sans Hanifi Rohingya";
+    src: url(../fonts/NotoSansHanifiRohingya-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Noto Sans Hanifi Rohingya";
+    src: url(../fonts/NotoSansHanifiRohingya-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}

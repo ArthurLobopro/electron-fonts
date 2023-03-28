@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-ExtraLightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-LightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Krub";
+    src: url(../fonts/Krub-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

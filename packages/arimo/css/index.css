@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url(../fonts/Arimo-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

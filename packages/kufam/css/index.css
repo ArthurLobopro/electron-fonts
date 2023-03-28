@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-ExtraBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Kufam";
+    src: url(../fonts/Kufam-BlackItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 900;
+}
