@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Kiwi Maru";
+    src: url(../fonts/KiwiMaru-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Kiwi Maru";
+    src: url(../fonts/KiwiMaru-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Kiwi Maru";
+    src: url(../fonts/KiwiMaru-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
