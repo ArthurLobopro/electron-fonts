@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Libre Barcode EAN13 Text";
+    src: url(../fonts/LibreBarcodeEAN13Text-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
