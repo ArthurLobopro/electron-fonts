@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Eczar";
+    src: url(../fonts/Eczar-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Eczar";
+    src: url(../fonts/Eczar-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Eczar";
+    src: url(../fonts/Eczar-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Eczar";
+    src: url(../fonts/Eczar-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Eczar";
+    src: url(../fonts/Eczar-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
