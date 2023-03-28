@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Flamenco";
+    src: url(../fonts/Flamenco-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Flamenco";
+    src: url(../fonts/Flamenco-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
