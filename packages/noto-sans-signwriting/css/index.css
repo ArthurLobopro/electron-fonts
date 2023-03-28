@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Noto Sans SignWriting";
+    src: url(../fonts/NotoSansSignWriting-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
