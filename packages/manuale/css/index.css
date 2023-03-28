@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-LightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Manuale";
+    src: url(../fonts/Manuale-ExtraBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

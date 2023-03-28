@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Sumana";
+    src: url(../fonts/Sumana-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Sumana";
+    src: url(../fonts/Sumana-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}

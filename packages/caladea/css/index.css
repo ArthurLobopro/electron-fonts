@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Caladea";
+    src: url(../fonts/Caladea-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Caladea";
+    src: url(../fonts/Caladea-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Caladea";
+    src: url(../fonts/Caladea-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Caladea";
+    src: url(../fonts/Caladea-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

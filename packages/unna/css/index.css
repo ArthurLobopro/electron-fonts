@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Unna";
+    src: url(../fonts/Unna-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Unna";
+    src: url(../fonts/Unna-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Unna";
+    src: url(../fonts/Unna-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Unna";
+    src: url(../fonts/Unna-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

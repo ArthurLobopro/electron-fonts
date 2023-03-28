@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-LightItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url(../fonts/Yrsa-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}

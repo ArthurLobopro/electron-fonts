@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "BioRhyme Expanded";
+    src: url(../fonts/BioRhymeExpanded-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "BioRhyme Expanded";
+    src: url(../fonts/BioRhymeExpanded-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "BioRhyme Expanded";
+    src: url(../fonts/BioRhymeExpanded-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "BioRhyme Expanded";
+    src: url(../fonts/BioRhymeExpanded-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "BioRhyme Expanded";
+    src: url(../fonts/BioRhymeExpanded-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
