@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Pragati Narrow";
+    src: url(../fonts/PragatiNarrow-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Pragati Narrow";
+    src: url(../fonts/PragatiNarrow-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
