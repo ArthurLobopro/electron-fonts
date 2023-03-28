@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Tinos";
+    src: url(../fonts/Tinos-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Tinos";
+    src: url(../fonts/Tinos-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Tinos";
+    src: url(../fonts/Tinos-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Tinos";
+    src: url(../fonts/Tinos-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
