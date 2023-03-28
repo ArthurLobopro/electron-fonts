@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display";
+    src: url(../fonts/BigShouldersInlineDisplay-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
