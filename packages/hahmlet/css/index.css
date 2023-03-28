@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Hahmlet";
+    src: url(../fonts/Hahmlet-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
