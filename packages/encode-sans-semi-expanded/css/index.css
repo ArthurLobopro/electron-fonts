@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Encode Sans Semi Expanded";
+    src: url(../fonts/EncodeSansSemiExpanded-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
