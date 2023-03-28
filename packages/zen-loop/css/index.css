@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Zen Loop";
+    src: url(../fonts/ZenLoop-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Zen Loop";
+    src: url(../fonts/ZenLoop-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
