@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Martel";
+    src: url(../fonts/Martel-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
