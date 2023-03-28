@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Noto Sans Syriac";
+    src: url(../fonts/NotoSansSyriac-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Noto Sans Syriac";
+    src: url(../fonts/NotoSansSyriac-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans Syriac";
+    src: url(../fonts/NotoSansSyriac-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
