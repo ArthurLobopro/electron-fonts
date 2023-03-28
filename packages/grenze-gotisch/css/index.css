@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Thin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-ExtraLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Light.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Grenze Gotisch";
+    src: url(../fonts/GrenzeGotisch-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
