@@ -24,7 +24,7 @@ axios.get(
     }
 ).then(res => {
     const fontNames = res.data.items
-        .filter(font => font.category == "monospace")
+        // .filter(font => font.category == "monospace")
         .map(font => {
             return (font.family)
         })
