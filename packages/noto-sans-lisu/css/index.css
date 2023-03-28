@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Noto Sans Lisu";
+    src: url(../fonts/NotoSansLisu-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans Lisu";
+    src: url(../fonts/NotoSansLisu-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto Sans Lisu";
+    src: url(../fonts/NotoSansLisu-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Noto Sans Lisu";
+    src: url(../fonts/NotoSansLisu-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
