@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Alkatra";
+    src: url(../fonts/Alkatra-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Alkatra";
+    src: url(../fonts/Alkatra-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Alkatra";
+    src: url(../fonts/Alkatra-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Alkatra";
+    src: url(../fonts/Alkatra-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
