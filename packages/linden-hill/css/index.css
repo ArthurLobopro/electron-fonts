@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Linden Hill";
+    src: url(../fonts/LindenHill-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Linden Hill";
+    src: url(../fonts/LindenHill-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
