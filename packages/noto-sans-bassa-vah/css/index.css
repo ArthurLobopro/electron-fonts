@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Noto Sans Bassa Vah";
+    src: url(../fonts/NotoSansBassaVah-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans Bassa Vah";
+    src: url(../fonts/NotoSansBassaVah-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto Sans Bassa Vah";
+    src: url(../fonts/NotoSansBassaVah-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Noto Sans Bassa Vah";
+    src: url(../fonts/NotoSansBassaVah-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
