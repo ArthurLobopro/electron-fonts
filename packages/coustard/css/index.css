@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Coustard";
+    src: url(../fonts/Coustard-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Coustard";
+    src: url(../fonts/Coustard-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
