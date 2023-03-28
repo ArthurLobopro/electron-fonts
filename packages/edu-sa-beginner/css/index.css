@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Edu SA Beginner";
+    src: url(../fonts/EduSABeginner-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Edu SA Beginner";
+    src: url(../fonts/EduSABeginner-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Edu SA Beginner";
+    src: url(../fonts/EduSABeginner-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Edu SA Beginner";
+    src: url(../fonts/EduSABeginner-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
