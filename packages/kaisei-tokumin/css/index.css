@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Kaisei Tokumin";
+    src: url(../fonts/KaiseiTokumin-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Kaisei Tokumin";
+    src: url(../fonts/KaiseiTokumin-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Kaisei Tokumin";
+    src: url(../fonts/KaiseiTokumin-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Kaisei Tokumin";
+    src: url(../fonts/KaiseiTokumin-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
