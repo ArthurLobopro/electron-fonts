@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-MediumItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-SemiBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-BoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-ExtraBoldItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-Black.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Schibsted Grotesk";
+    src: url(../fonts/SchibstedGrotesk-BlackItalic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 900;
+}
