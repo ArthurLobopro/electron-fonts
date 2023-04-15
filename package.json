@@ -11,7 +11,8 @@
     "scripts": {
         "generate": "node ./scripts/create/index.js",
         "update-css": "node ./scripts/update-css/index.js",
-        "add-package": "node ./scripts/add-package/index.js"
+        "add-package": "node ./scripts/add-package/index.js",
+        "add-new-fonts": "node ./scripts/add-new-fonts/index.js"
     },
     "description": "Electron fonts packages provide font archives em electron desktop apps.",
     "bugs": {
