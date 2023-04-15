@@ -17,14 +17,14 @@ function println(text) {
 
 packages_paths.forEach((packagePath, index) => {
 
-    if (index <= 1) {
-        //Adidently, I've updated the first 2 packages, so I'm skipping them
-        return
-    }
-
     const jsonPath = path.resolve(packagePath, "package.json")
 
     const content = require(jsonPath)
+
+    if (content.version === "1.1.0") {
+        // Already updated
+        return
+    }
 
     const name = content.name
     const fontName = content.keywords.at(-1)
