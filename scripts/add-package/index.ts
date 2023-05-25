@@ -1,15 +1,11 @@
-const download = require("download")
-const os = require("os")
-const path = require("path")
-const fs = require("fs")
-const { execSync } = require("child_process")
+import { execSync } from "child_process"
+import download from "download"
+import fs from "fs"
+import os from "os"
+import path from "path"
+import { getArg } from "../Util"
 
-/**
- * @param {string} message
- * @param {string} end
- * @returns {Promise<string>}
- */
-function input(message = "", end = "\n") {
+function input(message: string = "", end: string = "\n"): Promise<string> {
     process.stdout.write(message)
     process.stdout.write(end)
 
@@ -20,8 +16,8 @@ function input(message = "", end = "\n") {
     })
 }
 
-function validateFontName(fontName) {
-    const packageName = String(fontName).toLowerCase().replace(/ /g, "-")
+function validateFontName(fontName: string) {
+    const packageName = fontName.toLowerCase().replace(/ /g, "-")
 
     const packageDir = path.resolve(__dirname, "../../packages", packageName)
 
@@ -31,11 +27,6 @@ function validateFontName(fontName) {
     }
 
     return true
-}
-
-function getArg(argName) {
-    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
-    return (arg && arg.split("=")[1]) || null
 }
 
 let argAlreadyVerified = false
@@ -124,26 +115,26 @@ async function main() {
 
         console.log("    Done.\n")
 
-        process.stdout.write("Creating commit...")
+        // process.stdout.write("Creating commit...")
 
-        const relativePath = path.relative(process.cwd(), packageDir)
+        // const relativePath = path.relative(process.cwd(), packageDir)
 
-        execSync(
-            `git add ${relativePath} && git commit -m "feat: Added ${packageName} package"`,
-            { cwd: process.cwd() }
-        )
+        // execSync(
+        //     `git add ${relativePath} && git commit -m "feat: Added ${packageName} package"`,
+        //     { cwd: process.cwd() }
+        // )
 
-        console.log("    Done.\n")
+        // console.log("    Done.\n")
 
-        console.log("Publishing package...")
+        // console.log("Publishing package...")
 
-        execSync(
-            "npm publish",
-            {
-                cwd: packageDir,
-                stdio: "inherit"
-            }
-        )
+        // execSync(
+        //     "npm publish",
+        //     {
+        //         cwd: packageDir,
+        //         stdio: "inherit"
+        //     }
+        // )
 
         process.exit(0)
 

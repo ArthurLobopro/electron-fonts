@@ -1,12 +1,7 @@
-//@ts-check
+import fs from "fs"
+import path from "path"
 
-const path = require("path")
-const fs = require("fs")
-
-/**
- * @param {string} packageDir 
- */
-function generateFolders(packageDir) {
+export function generateFolders(packageDir: string) {
     const folders = [
         "css",
         "fonts"
@@ -17,8 +12,4 @@ function generateFolders(packageDir) {
     })
 
     fs.writeFileSync(path.resolve(packageDir, "css", "index.css"), "")
-}
-
-module.exports = {
-    generateFolders
 }

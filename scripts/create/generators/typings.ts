@@ -1,13 +1,7 @@
-//@ts-check
+import fs from "fs"
+import path from "path"
 
-const path = require("path")
-const fs = require("fs")
-
-/**
- * @param {string} packageName 
- * @param {string} packageDir 
- */
-function generateTypings(packageName, packageDir) {
+export function generateTypings(packageName: string, packageDir: string) {
     const typing_path = path.resolve(packageDir, "index.d.ts")
 
     const typing_content = [
@@ -18,8 +12,4 @@ function generateTypings(packageName, packageDir) {
     ].join("\n")
 
     fs.writeFileSync(typing_path, typing_content)
-}
-
-module.exports = {
-    generateTypings
 }

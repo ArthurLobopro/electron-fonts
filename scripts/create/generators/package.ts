@@ -1,13 +1,7 @@
-//@ts-check
+import fs from "fs"
+import path from "path"
 
-const fs = require("fs")
-const path = require("path")
-
-/**
- * @param {string} fontName
- * @param {string} packageDir 
- */
-function generatePackageJson(fontName, packageDir) {
+export function generatePackageJson(fontName: string, packageDir: string) {
     const packageJsonPath = path.resolve(packageDir, "package.json")
 
     const packageName = fontName.toLowerCase().replace(/ /g, "-")
@@ -44,8 +38,4 @@ function generatePackageJson(fontName, packageDir) {
     }
 
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJsonContent, null, 4))
-}
-
-module.exports = {
-    generatePackageJson
 }

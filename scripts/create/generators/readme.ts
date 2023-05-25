@@ -1,13 +1,9 @@
 //@ts-check
 
-const fs = require("fs")
-const path = require("path")
+import fs from "fs"
+import path from "path"
 
-/**
- * @param {string} fontName 
- * @param {string} packageDir 
- */
-function generateReadme(fontName, packageDir) {
+export function generateReadme(fontName: string, packageDir: string) {
     const readmePath = path.resolve(packageDir, "README.md")
 
     const packageName = fontName.toLowerCase().replace(/ /g, "-")
@@ -20,8 +16,4 @@ function generateReadme(fontName, packageDir) {
 
 
     fs.writeFileSync(readmePath, readmeContent)
-}
-
-module.exports = {
-    generateReadme
 }

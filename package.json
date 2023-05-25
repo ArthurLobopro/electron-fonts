@@ -9,9 +9,9 @@
     "author": "Arthur Lobo <64273139+ArthurLobopro@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
-        "generate": "node ./scripts/create/index.js",
+        "generate": "tsx ./scripts/create/index.ts",
         "update-css": "node ./scripts/update-css/index.js",
-        "add-package": "node ./scripts/add-package/index.js",
+        "add-package": "tsx ./scripts/add-package/index.ts",
         "add-new-fonts": "tsx ./scripts/add-new-fonts/index.ts"
     },
     "description": "Electron fonts packages provide font archives em electron desktop apps.",

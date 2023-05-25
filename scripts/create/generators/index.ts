@@ -1,12 +1,7 @@
-//@ts-check
-
 const fs = require("fs")
 const path = require("path")
 
-/**
- * @param {string} packageDir 
- */
-function generateIndexJs(packageDir) {
+export function generateIndexJs(packageDir: string) {
     const indexJsPath = path.resolve(packageDir, "index.js")
 
     const indexJsContent = [
@@ -22,8 +17,4 @@ function generateIndexJs(packageDir) {
     ].join("\n")
 
     fs.writeFileSync(indexJsPath, indexJsContent)
-}
-
-module.exports = {
-    generateIndexJs
 }
