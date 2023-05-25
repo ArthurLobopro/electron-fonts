@@ -1,4 +1,5 @@
 import axios from "axios"
+import { execSync } from "child_process"
 import fs from "fs"
 import { api_key, getPackageName, packagesDir } from "../Util"
 
@@ -20,13 +21,13 @@ axios.get(
 
         fontNames.forEach(font => {
             process.stdout.write(`Adding "${font}"...`)
-            // execSync(
-            //     `node scripts/add-package/index.js --name="${font}"`,
-            //     {
-            //         cwd: process.cwd(),
-            //         stdio: "ignore"
-            //     }
-            // )
+            execSync(
+                `node scripts/add-package/index.js --name="${font}"`,
+                {
+                    cwd: process.cwd(),
+                    stdio: "ignore"
+                }
+            )
             console.log("  Done.")
         })
 
