@@ -11,11 +11,11 @@ export function getPackageData(packageName: string) {
             }).then((res: any) => {
                 // console.log(res)
 
-                if (res.error) {
-                    return reject()
+                if (res.data.error) {
+                    return resolve("Not found")
                 }
 
-                return resolve(res)
-            })
+                return resolve(res.data)
+            }).catch(err => resolve("Not found"))
     })
 }
