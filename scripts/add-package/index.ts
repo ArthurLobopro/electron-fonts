@@ -1,9 +1,9 @@
 import download from "download"
-import fs from "fs"
-import os from "os"
-import path from "path"
+import fs from "node:fs"
+import os from "node:os"
+import path from "node:path"
 import { getArgValue, getPackageName } from "../Util"
-import { base_version } from "../constants"
+import { base_version, root } from "../constants"
 import { generatePackage } from "../create"
 import { publishToNPM } from "../util/publishToNPM"
 import { updateCSS } from "../util/updateCSS"
@@ -66,7 +66,7 @@ async function main() {
 
     const packageName = getPackageName(fontName)
 
-    const packageDir = path.resolve(process.cwd(), "packages", packageName)
+    const packageDir = path.resolve(root, "packages", packageName)
 
     try {
         const fontUrl = `https://fonts.google.com/download?family=${fontName.replace(/ /g, "%20")}`
