@@ -20,13 +20,13 @@ function input(message: string = "", end: string = "\n"): Promise<string> {
 }
 
 function validateFontName(fontName: string) {
-    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+    const packageName = getPackageName(fontName)
 
     const packageDir = path.resolve(__dirname, "../../packages", packageName)
 
     if (fs.existsSync(packageDir)) {
         console.error(`Package ${packageName} already exists`)
-        return false
+        // return false
     }
 
     return true
