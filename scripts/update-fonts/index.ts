@@ -61,7 +61,7 @@ axios.get(
                             dry ? "--dry" : ""
                         ].join(" "),
                         {
-                            stdio: "inherit",
+                            stdio: "ignore",
                             cwd: process.cwd()
                         }
                     )
