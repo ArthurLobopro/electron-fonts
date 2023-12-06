@@ -1,10 +1,7 @@
 import axios from "axios"
-import fs from "node:fs"
-import { api_key, getPackageName, packagesDir } from "../Util"
-import { generatePackage } from "../create"
+import { execSync } from "node:child_process"
+import { api_key, getPackageName } from "../Util"
 import { getPackageData } from "../util/getPackageData"
-
-const existingPackages = fs.readdirSync(packagesDir)
 
 axios.get(
     `https://webfonts.googleapis.com/v1/webfonts?sort=ALPHA&key=${api_key}`,
@@ -47,31 +44,37 @@ axios.get(
                 const packageLastRelease = new Date(lastRelease)
 
                 if (packageLastRelease < fontLastModified) {
-                    // console.log(`${family}: `)
-                    // console.table({
-                    //     fontLastModified: fontLastModified.toJSON(),
-                    //     packageLastRelease: packageLastRelease.toJSON()
-                    // })
                     const base_version = latest.split(".")
                     const last_number = Number(base_version.pop())
                     base_version.push(last_number)
                     const new_version = base_version.join(".")
-                    generatePackage(family, new_version)
+
+                    process.stdout.write(`Updating "${family}"...`)
+
+                    execSync(
+                        `yarn add-package --name="${family}" --version="${new_version}"`,
+                        {
+                            stdio: "inherit",
+                            cwd: process.cwd()
+                        }
+                    )
+
+                    console.log("  Done!")
                 }
+            } else {
+                process.stdout.write(`Adding "${family}"...`)
+
+                execSync(
+                    `yarn add-package --name="${family}"`,
+                    {
+                        stdio: "ignore",
+                        cwd: process.cwd()
+                    }
+                )
+
+                console.log("  Done!")
             }
         }
-
-        // fontData.forEach(({ family }) => {
-        //     process.stdout.write(`Updating "${family}"...`)
-        //     // execSync(
-        //     //     `yarn tsx update-package --name="${family}"`,
-        //     //     {
-        //     //         cwd: process.cwd(),
-        //     //         stdio: "ignore"
-        //     //     }
-        //     // )
-        //     console.log("  Done.")
-        // })
 
         process.exit(0)
     })
