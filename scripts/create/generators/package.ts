@@ -1,7 +1,7 @@
-import fs from "fs"
-import path from "path"
+import fs from "node:fs"
+import path from "node:path"
 
-export function generatePackageJson(fontName: string, packageDir: string) {
+export function generatePackageJson(fontName: string, packageDir: string, version = "1.0.0") {
     const packageJsonPath = path.resolve(packageDir, "package.json")
 
     const packageName = fontName.toLowerCase().replace(/ /g, "-")
@@ -9,7 +9,7 @@ export function generatePackageJson(fontName: string, packageDir: string) {
     const packageJsonContent = {
         "name": `@electron-fonts/${packageName}`,
         "author": "Arthur Lobo",
-        "version": "1.0.0",
+        version,
         "license": "MIT",
         "description": `${fontName} font injector to electron aplications.`,
         "keywords": [
@@ -25,7 +25,7 @@ export function generatePackageJson(fontName: string, packageDir: string) {
             "access": "public"
         },
         "dependencies": {
-            "electron-css-injector": "^1.0.0"
+            "electron-css-injector": "1.2.0"
         },
         "repository": {
             "type": "git",
