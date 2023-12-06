@@ -56,7 +56,7 @@ axios.get(
 
                     execSync(
                         [
-                            "npm run add-package",
+                            "npm run add-package --",
                             `--name="${family}"`,
                             `--version="${new_version}"`,
                             dry ? "--dry" : ""
@@ -74,7 +74,7 @@ axios.get(
 
                 execSync(
                     [
-                        "npm run add-package",
+                        "npm run add-package --",
                         `--name="${family}"`,
                         dry ? "--dry" : ""
                     ].join(" "),
