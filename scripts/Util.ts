@@ -5,6 +5,10 @@ export const api_key = fs.readFileSync(path.join(process.cwd(), "apikey.txt"), "
 
 export const packagesDir = path.resolve(process.cwd(), "packages")
 
+if (!fs.existsSync(packagesDir)) {
+    fs.mkdirSync(packagesDir)
+}
+
 export function getPackageName(fontName: string) {
     return fontName.toLowerCase().replace(/ /g, "-")
 }
