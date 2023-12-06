@@ -52,8 +52,10 @@ axios.get(
                     //     fontLastModified: fontLastModified.toJSON(),
                     //     packageLastRelease: packageLastRelease.toJSON()
                     // })
-                    const last_number = Number(latest.split(".").pop())
-                    const new_version = latest.split(".").pop().push(last_number).join(".")
+                    const base_version = latest.split(".")
+                    const last_number = Number(base_version.pop())
+                    base_version.push(last_number)
+                    const new_version = base_version.join(".")
                     generatePackage(family, new_version)
                 }
             }
