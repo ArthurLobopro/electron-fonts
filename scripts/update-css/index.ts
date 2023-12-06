@@ -2,7 +2,7 @@ import fs from "node:fs"
 import path from "node:path"
 import { packagesDir } from "../Util"
 
-export async function updateCSS(fontName) {
+export async function updateCSS(fontName: string) {
     const packageName = fontName
         .replace(/( \w)/g, match => "-" + match[1])
         .toLowerCase()
@@ -47,9 +47,8 @@ export async function updateCSS(fontName) {
 
     fs.writeFileSync(path.resolve(css_dir, "index.css"), css_content)
 
-    console.log("Done.")
-    console.log(`See: ${path.resolve(css_dir, "index.css")}`)
-    process.exit(0)
+    // console.log("Done.")
+    // console.log(`See: ${path.resolve(css_dir, "index.css")}`)
 }
 
 /**
