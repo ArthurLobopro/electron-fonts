@@ -13,3 +13,7 @@ export function getArgValue(argName: string) {
     const arg = process.argv.find(arg => arg.startsWith(argName)) || null
     return (arg && arg.split("=")[1]) || null
 }
+
+export function argExists(argName: string) {
+    return process.argv.some(arg => arg === argName)
+}
