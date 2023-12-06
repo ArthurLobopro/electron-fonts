@@ -1,7 +1,9 @@
 import axios from "axios"
 import { execSync } from "node:child_process"
-import { api_key, getPackageName } from "../Util"
+import { api_key, argExists, getPackageName } from "../Util"
 import { getPackageData } from "../util/getPackageData"
+
+const dry = argExists("--dry")
 
 axios.get(
     `https://webfonts.googleapis.com/v1/webfonts?sort=ALPHA&key=${api_key}`,
@@ -52,7 +54,12 @@ axios.get(
                     process.stdout.write(`Updating "${family}"...`)
 
                     execSync(
-                        `yarn add-package --name="${family}" --version="${new_version}"`,
+                        [
+                            "yarn add-package",
+                            `--name="${family}"`,
+                            `--version="${new_version}"`,
+                            dry ? "--dry" : ""
+                        ].join(" "),
                         {
                             stdio: "inherit",
                             cwd: process.cwd()
@@ -65,7 +72,11 @@ axios.get(
                 process.stdout.write(`Adding "${family}"...`)
 
                 execSync(
-                    `yarn add-package --name="${family}"`,
+                    [
+                        "yarn add-package",
+                        `--name="${family}"`,
+                        dry ? "--dry" : ""
+                    ].join(" "),
                     {
                         stdio: "ignore",
                         cwd: process.cwd()
