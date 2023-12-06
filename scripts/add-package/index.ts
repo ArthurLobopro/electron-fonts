@@ -4,8 +4,8 @@ import os from "os"
 import path from "path"
 import { getArg } from "../Util"
 import { generatePackage } from "../create"
-import { updateCSS } from "../update-css"
 import { publishToNPM } from "../util/publishToNPM"
+import { updateCSS } from "../util/updateCSS"
 
 function input(message: string = "", end: string = "\n"): Promise<string> {
     process.stdout.write(message)
