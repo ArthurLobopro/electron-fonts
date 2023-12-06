@@ -10,7 +10,8 @@
     "license": "MIT",
     "scripts": {
         "add-package": "tsx ./scripts/add-package/index.ts",
-        "add-new-fonts": "tsx ./scripts/add-new-fonts/index.ts"
+        "add-new-fonts": "tsx ./scripts/add-new-fonts/index.ts",
+        "update-fonts": "tsx ./scripts/update-fonts/index.ts"
     },
     "description": "Electron fonts packages provide font archives em electron desktop apps.",
     "bugs": {
