@@ -1,6 +1,7 @@
 import axios from "axios"
 import { execSync } from "node:child_process"
 import { api_key, argExists, getPackageName } from "../Util"
+import { root } from "../constants"
 import { getPackageData } from "../util/getPackageData"
 
 const dry = argExists("--dry")
@@ -55,14 +56,14 @@ axios.get(
 
                     execSync(
                         [
-                            "yarn add-package",
+                            "npm run add-package",
                             `--name="${family}"`,
                             `--version="${new_version}"`,
                             dry ? "--dry" : ""
                         ].join(" "),
                         {
                             stdio: "ignore",
-                            cwd: process.cwd()
+                            cwd: root
                         }
                     )
 
@@ -73,13 +74,13 @@ axios.get(
 
                 execSync(
                     [
-                        "yarn add-package",
+                        "npm run add-package",
                         `--name="${family}"`,
                         dry ? "--dry" : ""
                     ].join(" "),
                     {
                         stdio: "ignore",
-                        cwd: process.cwd()
+                        cwd: root
                     }
                 )
 

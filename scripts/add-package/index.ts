@@ -109,24 +109,16 @@ async function main() {
 
         process.stdout.write("Updating CSS...")
 
-        updateCSS(fontName)
+        await updateCSS(fontName)
 
-        console.log("    Done.\n")
+        console.log("    Done.")
 
-        // process.stdout.write("Creating commit...")
+        process.stdout.write("Publishing package...")
 
-        // const relativePath = path.relative(process.cwd(), packageDir)
+        publishToNPM(packageDir, { stdio: "inherit" })
 
-        // execSync(
-        //     `git add ${relativePath} && git commit -m "feat: Added ${packageName} package"`,
-        //     { cwd: process.cwd() }
-        // )
+        console.log("  Done.")
 
-        // console.log("    Done.\n")
-
-        // console.log("Publishing package...")
-
-        publishToNPM(packageDir)
 
         process.exit(0)
 
