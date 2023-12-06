@@ -22,10 +22,10 @@ axios.get(
         fontNames.forEach(font => {
             process.stdout.write(`Adding "${font}"...`)
             execSync(
-                `node scripts/add-package/index.js --name="${font}"`,
+                `yarn add-package --name="${font}" --version="1.1.0"`,
                 {
                     cwd: process.cwd(),
-                    stdio: "ignore"
+                    stdio: "inherit"
                 }
             )
             console.log("  Done.")
