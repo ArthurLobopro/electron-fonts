@@ -1,28 +1,13 @@
-const fs = require("fs")
-const path = require("path")
+import fs from "node:fs"
+import path from "node:path"
+import { packagesDir } from "../Util"
 
-/**
- * @param {string} message
- * @param {string} end
- * @returns {Promise<string>}
- */
-function input(message = "", end = "\n") {
-    process.stdout.write(message)
-    process.stdout.write(end)
-
-    return new Promise(res => {
-        process.stdin.once("data", data => {
-            res(data.toString().trim())
-        })
-    })
-}
-
-async function main(fontName) {
+export async function updateCSS(fontName) {
     const packageName = fontName
         .replace(/( \w)/g, match => "-" + match[1])
         .toLowerCase()
 
-    const packagePath = path.normalize(path.resolve(__dirname, "../../packages/", packageName))
+    const packagePath = path.normalize(path.resolve(packagesDir, packageName))
 
     const font_dir = path.resolve(packagePath, "fonts")
 
@@ -91,59 +76,3 @@ function getFontWeigth(fontName) {
                                     name.includes("black") ? 900 :
                                         400
 }
-
-function getArg(argName) {
-    const arg = process.argv.find(arg => arg.startsWith(argName)) || null
-    return (arg && arg.split("=")[1]) || null
-}
-
-let argAlreadyVerified = false
-
-async function getFontName() {
-
-    if (!argAlreadyVerified) {
-        const fontName = getArg("--name")
-
-        argAlreadyVerified = true
-
-        if (fontName !== null) {
-            if (validateFontName(fontName)) {
-                return fontName
-            } else {
-                return getFontName()
-            }
-        }
-    }
-
-    const fontName = await input("Font name: ")
-
-    console.log(fontName)
-
-    if (!validateFontName(fontName)) {
-        console.log("Invalid font name.")
-        return getFontName()
-    }
-
-    return fontName
-}
-
-function validateFontName(fontName) {
-    const packageName = String(fontName).toLowerCase().replace(/ /g, "-")
-
-    const packageDir = path.resolve(__dirname, "../../packages", packageName)
-
-    if (!fs.existsSync(packageDir)) {
-        console.error(`Package ${packageName} not found`)
-        return false
-    }
-
-    return true
-}
-
-
-(
-    async () => {
-        const packageName = await getFontName()
-        main(packageName)
-    }
-)()

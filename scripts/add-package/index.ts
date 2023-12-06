@@ -4,6 +4,7 @@ import fs from "fs"
 import os from "os"
 import path from "path"
 import { getArg } from "../Util"
+import { updateCSS } from "../update-css"
 
 function input(message: string = "", end: string = "\n"): Promise<string> {
     process.stdout.write(message)
@@ -108,10 +109,7 @@ async function main() {
 
         process.stdout.write("Updating CSS...")
 
-        execSync(
-            `yarn update-css --name="${fontName}"`,
-            { cwd: process.cwd() }
-        )
+        updateCSS(fontName)
 
         console.log("    Done.\n")
 
