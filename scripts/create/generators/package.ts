@@ -1,7 +1,8 @@
 import fs from "node:fs"
 import path from "node:path"
+import { base_version } from "../../constants"
 
-export function generatePackageJson(fontName: string, packageDir: string, version = "1.0.0") {
+export function generatePackageJson(fontName: string, packageDir: string, version = base_version) {
     const packageJsonPath = path.resolve(packageDir, "package.json")
 
     const packageName = fontName.toLowerCase().replace(/ /g, "-")

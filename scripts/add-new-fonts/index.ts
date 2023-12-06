@@ -2,6 +2,7 @@ import axios from "axios"
 import { execSync } from "child_process"
 import fs from "fs"
 import { api_key, getPackageName, packagesDir } from "../Util"
+import { base_version } from "../constants"
 
 const existingPackages = fs.readdirSync(packagesDir)
 
@@ -22,7 +23,7 @@ axios.get(
         fontNames.forEach(font => {
             process.stdout.write(`Adding "${font}"...`)
             execSync(
-                `yarn add-package --name="${font}" --version="1.1.0"`,
+                `yarn add-package --name="${font}" --version="${base_version}"`,
                 {
                     cwd: process.cwd(),
                     stdio: "inherit"
