@@ -48,7 +48,7 @@ axios.get(
 
                 if (packageLastRelease < fontLastModified) {
                     const base_version = latest.split(".")
-                    const last_number = Number(base_version.pop())
+                    const last_number = Number(base_version.pop()) + 1
                     base_version.push(last_number)
                     const new_version = base_version.join(".")
 
