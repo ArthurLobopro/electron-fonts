@@ -1,9 +1,9 @@
-import { execSync } from "child_process"
 import download from "download"
 import fs from "fs"
 import os from "os"
 import path from "path"
 import { getArg } from "../Util"
+import { generatePackage } from "../create"
 import { updateCSS } from "../update-css"
 
 function input(message: string = "", end: string = "\n"): Promise<string> {
@@ -60,6 +60,7 @@ async function getFontName() {
 
 async function main() {
     const fontName = await getFontName()
+    const version = getArg("--version") || "1.0.0"
 
     const packageName = fontName.toLowerCase().replace(/ /g, "-")
 
@@ -87,10 +88,7 @@ async function main() {
 
         process.stdout.write("Creating package dir...")
 
-        execSync(
-            `yarn generate --name="${fontName}"`,
-            { cwd: process.cwd() }
-        )
+        generatePackage(fontName, version)
 
         console.log("    Done.\n")
 
