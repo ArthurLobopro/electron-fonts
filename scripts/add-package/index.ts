@@ -2,7 +2,8 @@ import download from "download"
 import fs from "fs"
 import os from "os"
 import path from "path"
-import { getArg, getPackageName } from "../Util"
+import { getArgValue, getPackageName } from "../Util"
+import { base_version } from "../constants"
 import { generatePackage } from "../create"
 import { publishToNPM } from "../util/publishToNPM"
 import { updateCSS } from "../util/updateCSS"
@@ -36,7 +37,7 @@ let argAlreadyVerified = false
 async function getFontName() {
 
     if (!argAlreadyVerified) {
-        const fontName = getArg("--name")
+        const fontName = getArgValue("--name")
 
         argAlreadyVerified = true
 
@@ -61,7 +62,7 @@ async function getFontName() {
 
 async function main() {
     const fontName = await getFontName()
-    const version = getArg("--version") || "1.0.0"
+    const version = getArgValue("--version") || base_version
 
     const packageName = getPackageName(fontName)
 

@@ -9,7 +9,7 @@ export function getPackageName(fontName: string) {
     return fontName.toLowerCase().replace(/ /g, "-")
 }
 
-export function getArg(argName: string) {
+export function getArgValue(argName: string) {
     const arg = process.argv.find(arg => arg.startsWith(argName)) || null
     return (arg && arg.split("=")[1]) || null
 }
