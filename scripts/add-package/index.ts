@@ -2,7 +2,7 @@ import download from "download"
 import fs from "fs"
 import os from "os"
 import path from "path"
-import { getArg } from "../Util"
+import { getArg, getPackageName } from "../Util"
 import { generatePackage } from "../create"
 import { publishToNPM } from "../util/publishToNPM"
 import { updateCSS } from "../util/updateCSS"
@@ -63,7 +63,7 @@ async function main() {
     const fontName = await getFontName()
     const version = getArg("--version") || "1.0.0"
 
-    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+    const packageName = getPackageName(fontName)
 
     const packageDir = path.resolve(process.cwd(), "packages", packageName)
 

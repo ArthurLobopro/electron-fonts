@@ -1,11 +1,12 @@
 import fs from "node:fs"
 import path from "node:path"
+import { getPackageName } from "../../Util"
 import { base_version } from "../../constants"
 
 export function generatePackageJson(fontName: string, packageDir: string, version = base_version) {
     const packageJsonPath = path.resolve(packageDir, "package.json")
 
-    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+    const packageName = getPackageName(fontName)
 
     const packageJsonContent = {
         "name": `@electron-fonts/${packageName}`,
