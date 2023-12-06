@@ -1,6 +1,7 @@
 import axios from "axios"
 import fs from "node:fs"
 import { api_key, getPackageName, packagesDir } from "../Util"
+import { generatePackage } from "../create"
 import { getPackageData } from "../util/getPackageData"
 
 const existingPackages = fs.readdirSync(packagesDir)
@@ -46,11 +47,14 @@ axios.get(
                 const packageLastRelease = new Date(lastRelease)
 
                 if (packageLastRelease < fontLastModified) {
-                    console.log(`${family}: `)
-                    console.table({
-                        fontLastModified: fontLastModified.toJSON(),
-                        packageLastRelease: packageLastRelease.toJSON()
-                    })
+                    // console.log(`${family}: `)
+                    // console.table({
+                    //     fontLastModified: fontLastModified.toJSON(),
+                    //     packageLastRelease: packageLastRelease.toJSON()
+                    // })
+                    const last_number = Number(latest.split(".").pop())
+                    const new_version = latest.split(".").pop().push(last_number).join(".")
+                    generatePackage(family, new_version)
                 }
             }
         }
