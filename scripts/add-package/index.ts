@@ -5,6 +5,7 @@ import path from "path"
 import { getArg } from "../Util"
 import { generatePackage } from "../create"
 import { updateCSS } from "../update-css"
+import { publishToNPM } from "../util/publishToNPM"
 
 function input(message: string = "", end: string = "\n"): Promise<string> {
     process.stdout.write(message)
@@ -124,13 +125,7 @@ async function main() {
 
         // console.log("Publishing package...")
 
-        // execSync(
-        //     "npm publish",
-        //     {
-        //         cwd: packageDir,
-        //         stdio: "inherit"
-        //     }
-        // )
+        publishToNPM(packageDir)
 
         process.exit(0)
 
