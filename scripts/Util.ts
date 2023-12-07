@@ -22,3 +22,11 @@ export function getArgValue(argName: string) {
 export function argExists(argName: string) {
     return process.argv.some(arg => arg === argName)
 }
+
+export function getNextPatchVersion(version: string) {
+    const splited_version: any[] = version.split(".")
+    const next_number = Number(splited_version.pop()) + 1
+    splited_version.push(next_number)
+
+    return splited_version.join(".")
+}
