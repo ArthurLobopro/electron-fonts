@@ -9,10 +9,9 @@
     "author": "Arthur Lobo <64273139+ArthurLobopro@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
-        "generate": "tsx ./scripts/create/index.ts",
-        "update-css": "node ./scripts/update-css/index.js",
         "add-package": "tsx ./scripts/add-package/index.ts",
-        "add-new-fonts": "tsx ./scripts/add-new-fonts/index.ts"
+        "add-new-fonts": "tsx ./scripts/add-new-fonts/index.ts",
+        "update-fonts": "tsx ./scripts/update-fonts/index.ts"
     },
     "description": "Electron fonts packages provide font archives em electron desktop apps.",
     "bugs": {
@@ -21,6 +20,7 @@
     "homepage": "https://github.com/ArthurLobopro/electron-fonts#readme",
     "keywords": [],
     "devDependencies": {
+        "@types/node": "^20.10.3",
         "axios": "^1.3.4",
         "download": "^8.0.0",
         "tsx": "^3.12.7"

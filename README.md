@@ -15,13 +15,3 @@ window.addEventListener("DOMContentLoaded", () => {
     FontName.inject()
 })
 ```
-
-## Contributing
-
-If you want contribute, follow these steps:
-
-* Download font families on [google fonts](https://fonts.google.com/)
-* Run `yarn generate` and inform the font name
-* Unzip the font archives and move static font archives to ./packages/font-name/fonts
-* Run `yarn update-css` and inform the font name again
-* Send a pull request!

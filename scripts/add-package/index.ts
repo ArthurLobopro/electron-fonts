@@ -1,9 +1,12 @@
-import { execSync } from "child_process"
 import download from "download"
-import fs from "fs"
-import os from "os"
-import path from "path"
-import { getArg } from "../Util"
+import fs from "node:fs"
+import os from "node:os"
+import path from "node:path"
+import { argExists, getArgValue, getPackageName } from "../Util"
+import { base_version, root } from "../constants"
+import { generatePackage } from "../create"
+import { publishToNPM } from "../util/publishToNPM"
+import { updateCSS } from "../util/updateCSS"
 
 function input(message: string = "", end: string = "\n"): Promise<string> {
     process.stdout.write(message)
@@ -17,13 +20,13 @@ function input(message: string = "", end: string = "\n"): Promise<string> {
 }
 
 function validateFontName(fontName: string) {
-    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+    const packageName = getPackageName(fontName)
 
     const packageDir = path.resolve(__dirname, "../../packages", packageName)
 
     if (fs.existsSync(packageDir)) {
         console.error(`Package ${packageName} already exists`)
-        return false
+        // return false
     }
 
     return true
@@ -34,7 +37,7 @@ let argAlreadyVerified = false
 async function getFontName() {
 
     if (!argAlreadyVerified) {
-        const fontName = getArg("--name")
+        const fontName = getArgValue("--name")
 
         argAlreadyVerified = true
 
@@ -57,12 +60,36 @@ async function getFontName() {
     return fontName
 }
 
+function getFiles(fontDir: string[], savePath: string, fontName: string) {
+    fontName = fontName.replace(/ /g, "")
+
+    if (fontDir.includes("static")) {
+        const staticDir = fs.readdirSync(path.resolve(savePath, "static"))
+
+        if (staticDir.includes(fontName)) {
+            return fs.readdirSync(path.resolve(savePath, "static", fontName))
+                .filter(file => file.endsWith(".ttf"))
+                .map(file => path.resolve(savePath, "static", fontName, file))
+        } else {
+            return staticDir
+                .filter(file => file.endsWith(".ttf"))
+                .map(file => path.resolve(savePath, "static", file))
+        }
+
+    }
+
+    return fontDir
+        .filter(file => file.endsWith(".ttf"))
+        .map(file => path.resolve(savePath, file))
+}
+
 async function main() {
     const fontName = await getFontName()
+    const version = getArgValue("--version") || base_version
 
-    const packageName = fontName.toLowerCase().replace(/ /g, "-")
+    const packageName = getPackageName(fontName)
 
-    const packageDir = path.resolve(process.cwd(), "packages", packageName)
+    const packageDir = path.resolve(root, "packages", packageName)
 
     try {
         const fontUrl = `https://fonts.google.com/download?family=${fontName.replace(/ /g, "%20")}`
@@ -75,21 +102,13 @@ async function main() {
 
         const fontDir = fs.readdirSync(savePath)
 
-        const files = fontDir.includes("static") ?
-            fs.readdirSync(path.resolve(savePath, "static"))
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", file)) :
-            fontDir.filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, file))
+        const files = getFiles(fontDir, savePath, fontName)
 
         console.log(`Found ${files.length} font files\n`)
 
         process.stdout.write("Creating package dir...")
 
-        execSync(
-            `yarn generate --name="${fontName}"`,
-            { cwd: process.cwd() }
-        )
+        generatePackage(fontName, version)
 
         console.log("    Done.\n")
 
@@ -98,6 +117,10 @@ async function main() {
         process.stdout.write("Copying font files...")
 
         files.forEach(file => {
+            // fs.renameSync(
+            //     file,
+            //     path.resolve(fontDirPath, path.basename(file))
+            // )
             fs.copyFileSync(
                 file,
                 path.resolve(fontDirPath, path.basename(file))
@@ -108,33 +131,16 @@ async function main() {
 
         process.stdout.write("Updating CSS...")
 
-        execSync(
-            `yarn update-css --name="${fontName}"`,
-            { cwd: process.cwd() }
-        )
+        await updateCSS(fontName)
 
-        console.log("    Done.\n")
+        console.log("    Done.")
 
-        // process.stdout.write("Creating commit...")
+        process.stdout.write("Publishing package...")
 
-        // const relativePath = path.relative(process.cwd(), packageDir)
+        publishToNPM(packageDir, { stdio: "inherit", dry: argExists("--dry") })
 
-        // execSync(
-        //     `git add ${relativePath} && git commit -m "feat: Added ${packageName} package"`,
-        //     { cwd: process.cwd() }
-        // )
+        console.log("  Done.")
 
-        // console.log("    Done.\n")
-
-        // console.log("Publishing package...")
-
-        // execSync(
-        //     "npm publish",
-        //     {
-        //         cwd: packageDir,
-        //         stdio: "inherit"
-        //     }
-        // )
 
         process.exit(0)
 
@@ -145,7 +151,7 @@ async function main() {
         if (fs.existsSync(packageDir)) {
             console.log("Removing package dir...")
 
-            fs.rmSync(packageDir, { recursive: true })
+            // fs.rmSync(packageDir, { recursive: true })
         }
 
         process.exit(1)
