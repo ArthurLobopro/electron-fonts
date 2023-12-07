@@ -2,7 +2,7 @@ import download from "download"
 import fs from "node:fs"
 import os from "node:os"
 import path from "node:path"
-import { getArgValue, getPackageName } from "../Util"
+import { argExists, getArgValue, getPackageName } from "../Util"
 import { base_version, root } from "../constants"
 import { generatePackage } from "../create"
 import { publishToNPM } from "../util/publishToNPM"
@@ -60,6 +60,29 @@ async function getFontName() {
     return fontName
 }
 
+function getFiles(fontDir: string[], savePath: string, fontName: string) {
+    fontName = fontName.replace(/ /g, "")
+
+    if (fontDir.includes("static")) {
+        const staticDir = fs.readdirSync(path.resolve(savePath, "static"))
+
+        if (staticDir.includes(fontName)) {
+            return fs.readdirSync(path.resolve(savePath, "static", fontName))
+                .filter(file => file.endsWith(".ttf"))
+                .map(file => path.resolve(savePath, "static", fontName, file))
+        } else {
+            return staticDir
+                .filter(file => file.endsWith(".ttf"))
+                .map(file => path.resolve(savePath, "static", file))
+        }
+
+    }
+
+    return fontDir
+        .filter(file => file.endsWith(".ttf"))
+        .map(file => path.resolve(savePath, file))
+}
+
 async function main() {
     const fontName = await getFontName()
     const version = getArgValue("--version") || base_version
@@ -79,12 +102,7 @@ async function main() {
 
         const fontDir = fs.readdirSync(savePath)
 
-        const files = fontDir.includes("static") ?
-            fs.readdirSync(path.resolve(savePath, "static"))
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", file)) :
-            fontDir.filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, file))
+        const files = getFiles(fontDir, savePath, fontName)
 
         console.log(`Found ${files.length} font files\n`)
 
@@ -99,6 +117,10 @@ async function main() {
         process.stdout.write("Copying font files...")
 
         files.forEach(file => {
+            // fs.renameSync(
+            //     file,
+            //     path.resolve(fontDirPath, path.basename(file))
+            // )
             fs.copyFileSync(
                 file,
                 path.resolve(fontDirPath, path.basename(file))
@@ -115,7 +137,7 @@ async function main() {
 
         process.stdout.write("Publishing package...")
 
-        publishToNPM(packageDir, { stdio: "inherit" })
+        publishToNPM(packageDir, { stdio: "inherit", dry: argExists("--dry") })
 
         console.log("  Done.")
 
@@ -129,7 +151,7 @@ async function main() {
         if (fs.existsSync(packageDir)) {
             console.log("Removing package dir...")
 
-            fs.rmSync(packageDir, { recursive: true })
+            // fs.rmSync(packageDir, { recursive: true })
         }
 
         process.exit(1)
