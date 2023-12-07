@@ -1,15 +1,3 @@
-import fs from "node:fs"
-import path from "node:path"
-import { root } from "./constants"
-
-export const api_key = fs.readFileSync(path.join(root, "apikey.txt"), "utf8")
-
-export const packagesDir = path.resolve(root, "packages")
-
-if (!fs.existsSync(packagesDir)) {
-    fs.mkdirSync(packagesDir)
-}
-
 export function getPackageName(fontName: string) {
     return fontName.toLowerCase().replace(/ /g, "-")
 }
