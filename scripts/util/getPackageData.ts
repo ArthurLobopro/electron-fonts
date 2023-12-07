@@ -1,9 +1,13 @@
 import axios from "axios"
 
-export function getPackageData(packageName: string) {
+type untypedObject = {
+    [key: string]: any
+}
+
+export function getPackageData(packageName: string, version: string = ""): Promise<string | untypedObject> {
     return new Promise((resolve, reject) => {
         axios.get(
-            `https://registry.npmjs.org/@electron-fonts/${packageName}`,
+            `https://registry.npmjs.org/@electron-fonts/${packageName}/${version}`,
             {
                 headers: {
                     "Accept": "application/json"
