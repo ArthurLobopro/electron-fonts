@@ -6,10 +6,12 @@ import { root } from "../constants"
 import { getPackageData } from "../util/getPackageData"
 import { PackageRegistry } from "../util/types"
 
+const void_packages_list_path = path.resolve(__dirname, "../find-void-packages/void-fonts.txt")
+
 function getVoidPackages() {
     try {
         return fs
-            .readFileSync(path.resolve(__dirname, "../find-void-packages/void-fonts.txt"))
+            .readFileSync(void_packages_list_path)
             .toString()
             .split("\n")
     } catch (error) {
@@ -18,12 +20,18 @@ function getVoidPackages() {
     }
 }
 
+function removeFromVoidPackages(name: string) {
+    const new_list = void_packages.filter(pkgName => name !== pkgName).join("\n")
+
+    fs.writeFileSync(void_packages_list_path, new_list, { encoding: "utf-8" })
+}
+
 const void_packages = getVoidPackages()
 
 function unpublish(name: string) {
     execSync(
         `npm unpublish ${name}`,
-        { stdio: "inherit" }
+        { stdio: "ignore" }
     )
 }
 
@@ -66,6 +74,8 @@ async function fixVoidPackages() {
 
             console.log("  Done!")
         }
+
+        removeFromVoidPackages(name)
     }
 }
 
