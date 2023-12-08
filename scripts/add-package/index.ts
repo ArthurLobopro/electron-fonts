@@ -77,7 +77,20 @@ function resolveStaticDir(staticDirPath: string, fontName: string) {
             .map(file => path.resolve(staticDirPath, file))
     }
 
-    return fonts
+    if (fonts.length) {
+        return fonts
+    }
+
+    const regex_pt = new RegExp(`${fontName}_\\d{1,2}pt`)
+    const regex_20pt = new RegExp(`${fontName}_2\\dpt`)
+
+    let variations_with_pt = staticDir.filter(folder => regex_pt.test(folder))
+
+    let variation_path = variations_with_pt.find((variation) => regex_20pt.test(variation)) || variations_with_pt[0]
+
+    return fs.readdirSync(path.resolve(staticDirPath, variation_path))
+        .filter(fontFilter)
+        .map(file => path.resolve(staticDirPath, variation_path, file))
 }
 
 function getFiles(fontDir: string[], savePath: string, fontName: string) {
