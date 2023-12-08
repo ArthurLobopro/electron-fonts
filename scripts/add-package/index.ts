@@ -60,22 +60,31 @@ async function getFontName() {
     return fontName
 }
 
+const ttfFilter = (file: string) => file.endsWith(".ttf")
+
+function resolveStaticDir(staticDirPath: string, fontName: string) {
+    let fonts: string[] = []
+
+    const staticDir = fs.readdirSync(staticDirPath)
+
+    if (staticDir.includes(fontName)) {
+        fonts = fs.readdirSync(path.resolve(staticDirPath, fontName))
+            .filter(ttfFilter)
+            .map(file => path.resolve(staticDirPath, fontName, file))
+    } else {
+        fonts = staticDir
+            .filter(ttfFilter)
+            .map(file => path.resolve(staticDirPath, file))
+    }
+
+    return fonts
+}
+
 function getFiles(fontDir: string[], savePath: string, fontName: string) {
     fontName = fontName.replace(/ /g, "")
 
     if (fontDir.includes("static")) {
-        const staticDir = fs.readdirSync(path.resolve(savePath, "static"))
-
-        if (staticDir.includes(fontName)) {
-            return fs.readdirSync(path.resolve(savePath, "static", fontName))
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", fontName, file))
-        } else {
-            return staticDir
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", file))
-        }
-
+        return resolveStaticDir(path.resolve(savePath, "static"), fontName)
     }
 
     return fontDir
