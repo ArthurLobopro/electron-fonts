@@ -65,15 +65,15 @@ async function fixVoidPackages() {
 
         console.log("  Done!")
 
-        for (const versionToDelete of versionsToDelete) {
-            const fullName = `${name}@${versionToDelete}`
+        // for (const versionToDelete of versionsToDelete) {
+        //     const fullName = `${name}@${versionToDelete}`
 
-            process.stdout.write(`Unpublishing "${fullName}"...`)
+        //     process.stdout.write(`Unpublishing "${fullName}"...`)
 
-            unpublish(fullName)
+        //     unpublish(fullName)
 
-            console.log("  Done!")
-        }
+        //     console.log("  Done!")
+        // }
 
         removeFromVoidPackages(name)
     }
