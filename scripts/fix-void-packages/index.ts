@@ -29,7 +29,7 @@ function unpublish(name: string) {
 
 async function fixVoidPackages() {
     for (const package_name of void_packages) {
-        const packageData = getPackageData(package_name) as unknown as PackageRegistry
+        const packageData = await getPackageData(package_name) as unknown as PackageRegistry
 
         const versionsToDelete =
             Object.entries(packageData.versions)
