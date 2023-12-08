@@ -14,6 +14,7 @@ function getVoidPackages() {
             .readFileSync(void_packages_list_path)
             .toString()
             .split("\n")
+            .filter((value) => value.length)
     } catch (error) {
         console.error("Void fonts isn't provided")
         process.exit(1)
