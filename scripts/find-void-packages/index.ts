@@ -1,15 +1,13 @@
 import axios from "axios"
 import { execSync } from "child_process"
-import { api_key, getPackageName } from "../Util"
+import { getPackageName } from "../Util"
+import { axios_options, google_fonts_request } from "../constants"
 import { getPackageData } from "../util/getPackageData"
 
 axios.get(
-    `https://webfonts.googleapis.com/v1/webfonts?sort=ALPHA&key=${api_key}`,
-    {
-        headers: {
-            "Accept": "application/json"
-        }
-    })
+    google_fonts_request,
+    axios_options
+)
     .then(async res => {
         const fontNames = res.data.items
             .map(font => font.family)

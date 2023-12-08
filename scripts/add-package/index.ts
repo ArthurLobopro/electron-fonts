@@ -60,26 +60,48 @@ async function getFontName() {
     return fontName
 }
 
+const fontFilter = (file: string) => file.endsWith(".ttf") || file.endsWith(".otf")
+
+function resolveStaticDir(staticDirPath: string, fontName: string) {
+    let fonts: string[] = []
+
+    const staticDir = fs.readdirSync(staticDirPath)
+
+    if (staticDir.includes(fontName)) {
+        fonts = fs.readdirSync(path.resolve(staticDirPath, fontName))
+            .filter(fontFilter)
+            .map(file => path.resolve(staticDirPath, fontName, file))
+    } else {
+        fonts = staticDir
+            .filter(fontFilter)
+            .map(file => path.resolve(staticDirPath, file))
+    }
+
+    if (fonts.length) {
+        return fonts
+    }
+
+    const regex_pt = new RegExp(`${fontName}_\\d{1,2}pt`)
+    const regex_20pt = new RegExp(`${fontName}_2\\dpt`)
+
+    let variations_with_pt = staticDir.filter(folder => regex_pt.test(folder))
+
+    let variation_path = variations_with_pt.find((variation) => regex_20pt.test(variation)) || variations_with_pt[0]
+
+    return fs.readdirSync(path.resolve(staticDirPath, variation_path))
+        .filter(fontFilter)
+        .map(file => path.resolve(staticDirPath, variation_path, file))
+}
+
 function getFiles(fontDir: string[], savePath: string, fontName: string) {
     fontName = fontName.replace(/ /g, "")
 
     if (fontDir.includes("static")) {
-        const staticDir = fs.readdirSync(path.resolve(savePath, "static"))
-
-        if (staticDir.includes(fontName)) {
-            return fs.readdirSync(path.resolve(savePath, "static", fontName))
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", fontName, file))
-        } else {
-            return staticDir
-                .filter(file => file.endsWith(".ttf"))
-                .map(file => path.resolve(savePath, "static", file))
-        }
-
+        return resolveStaticDir(path.resolve(savePath, "static"), fontName)
     }
 
     return fontDir
-        .filter(file => file.endsWith(".ttf"))
+        .filter(fontFilter)
         .map(file => path.resolve(savePath, file))
 }
 
@@ -135,6 +157,18 @@ async function main() {
 
         console.log("    Done.")
 
+        process.stdout.write("Checking Package ...")
+
+        if (!fs.readdirSync(fontDirPath).filter(fontFilter).length) {
+            throw new Error("There are no fonts in the fonts folder")
+        }
+
+        if (!fs.readFileSync(path.resolve(packageDir, "css", "index.css")).length) {
+            throw new Error("Void CSS")
+        }
+
+        console.log("  Done.")
+
         process.stdout.write("Publishing package...")
 
         publishToNPM(packageDir, { stdio: "inherit", dry: argExists("--dry") })
@@ -145,7 +179,7 @@ async function main() {
         process.exit(0)
 
     } catch (error) {
-        console.error("An error occurred:")
+        console.error("\nAn error occurred:")
         console.error(error)
 
         if (fs.existsSync(packageDir)) {

@@ -1,6 +1,16 @@
 import fs from "node:fs"
 import path from "node:path"
-import { packagesDir } from "../Util"
+import { packagesDir } from "../constants"
+
+function getFontType(fileName: string) {
+    if (fileName.endsWith(".ttf")) {
+        return "truetype"
+    }
+
+    if (fileName.endsWith(".otf")) {
+        return "opentype"
+    }
+}
 
 export async function updateCSS(fontName: string) {
     const packageName = fontName
@@ -27,7 +37,8 @@ export async function updateCSS(fontName: string) {
             name: fontName,
             url: path.join(relative_dir, fileName),
             style: getFontStyle(fileName),
-            weight: getFontWeigth(fileName)
+            weight: getFontWeigth(fileName),
+            type: getFontType(fileName)
         }
     })
         .sort((a, b) => (
@@ -38,7 +49,7 @@ export async function updateCSS(fontName: string) {
             return [
                 "@font-face {",
                 `    font-family: "${font.name}";`,
-                `    src: url(${font.url}) format("truetype");`,
+                `    src: url(${font.url}) format("${font.type}");`,
                 `    font-style: ${font.style};`,
                 `    font-weight: ${font.weight};`,
                 "}"

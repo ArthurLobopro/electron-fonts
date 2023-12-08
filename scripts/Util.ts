@@ -1,15 +1,3 @@
-import fs from "node:fs"
-import path from "node:path"
-import { root } from "./constants"
-
-export const api_key = fs.readFileSync(path.join(root, "apikey.txt"), "utf8")
-
-export const packagesDir = path.resolve(root, "packages")
-
-if (!fs.existsSync(packagesDir)) {
-    fs.mkdirSync(packagesDir)
-}
-
 export function getPackageName(fontName: string) {
     return fontName.toLowerCase().replace(/ /g, "-")
 }
@@ -21,4 +9,12 @@ export function getArgValue(argName: string) {
 
 export function argExists(argName: string) {
     return process.argv.some(arg => arg === argName)
+}
+
+export function getNextPatchVersion(version: string) {
+    const splited_version: any[] = version.split(".")
+    const next_number = Number(splited_version.pop()) + 1
+    splited_version.push(next_number)
+
+    return splited_version.join(".")
 }
