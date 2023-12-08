@@ -34,6 +34,7 @@ async function fixVoidPackages() {
         const versionsToDelete =
             Object.entries(packageData.versions)
                 .filter(([version]) => version.match(/^\d+\.\d+\.\d+$/))
+                .map(([version]) => version)
 
         const { name, "dist-tags": { latest } } = packageData
 
