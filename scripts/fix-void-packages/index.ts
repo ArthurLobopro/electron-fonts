@@ -49,21 +49,26 @@ async function fixVoidPackages() {
         const fontName = packageData.versions[latest].keywords.at(-1)
         const next_version = getNextPatchVersion(latest)
 
-        process.stdout.write(`Updating "${fontName}"...`)
+        try {
+            process.stdout.write(`Updating "${fontName}"...`)
 
-        execSync(
-            [
-                "npm run add-package --",
-                `--name="${fontName}"`,
-                `--version="${next_version}"`,
-            ].join(" "),
-            {
-                stdio: "ignore",
-                cwd: root
-            }
-        )
+            execSync(
+                [
+                    "npm run add-package --",
+                    `--name="${fontName}"`,
+                    `--version="${next_version}"`,
+                ].join(" "),
+                {
+                    stdio: "ignore",
+                    cwd: root
+                }
+            )
 
-        console.log("  Done!")
+            console.log("  Done!")
+        } catch (error) {
+            console.log("  An error ocurred, aborted.")
+
+        }
 
         // for (const versionToDelete of versionsToDelete) {
         //     const fullName = `${name}@${versionToDelete}`
