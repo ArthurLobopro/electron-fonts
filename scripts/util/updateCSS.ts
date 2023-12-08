@@ -1,6 +1,6 @@
 import fs from "node:fs"
 import path from "node:path"
-import { packagesDir } from "../Util"
+import { packagesDir } from "../constants"
 
 export async function updateCSS(fontName: string) {
     const packageName = fontName
