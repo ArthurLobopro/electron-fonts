@@ -27,7 +27,7 @@ export function generatePackageJson(fontName: string, packageDir: string, versio
             "access": "public"
         },
         "dependencies": {
-            "electron-css-injector": "1.2.0"
+            "electron-css-injector": "1.3.0"
         },
         "repository": {
             "type": "git",

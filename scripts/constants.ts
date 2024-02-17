@@ -1,7 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 
-export const base_version = "1.1.0"
+export const base_version = "1.2.0"
 export const root = path.resolve(__dirname, "../")
 export const packagesDir = path.resolve(root, "packages")
 
